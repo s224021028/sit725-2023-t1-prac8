@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  name: basic_calculator
+  app:
+    image: roy97/basical:latest
+    restart: always
+    ports:
+    - "3000:3000"
+    links:
+    - mongo
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+    - "27017:27017"
